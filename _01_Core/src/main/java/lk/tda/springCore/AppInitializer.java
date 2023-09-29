@@ -1,11 +1,10 @@
 package lk.tda.springCore;
 
-import lk.tda.springCore.bean.SPringBean4;
-import lk.tda.springCore.bean.SpringBean;
-import lk.tda.springCore.bean.SpringBean2;
-import lk.tda.springCore.bean.SpringBean3;
+import lk.tda.springCore.bean.*;
 import lk.tda.springCore.config.AppConfig;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
+
+import java.util.Date;
 
 public class AppInitializer {
     public static void main(String[] args) {
@@ -51,6 +50,19 @@ public class AppInitializer {
         //We can change default bean id if we want
         SpringBean2 springBean2= (SpringBean2) ctx.getBean("BeanTwo");
         System.out.println(springBean2);
+
+        MyConnection myConnection = ctx.getBean(MyConnection.class);
+        System.out.println("MyConnection : "+myConnection);
+
+        // MyConnection -> myConnection -> X //No bean named 'myConnection' available
+        // MyConnection -> MyConnection -> X //No bean named 'MyConnection' available
+        // MyConnection -> getConnection (Default)
+        MyConnection myConnection1= (MyConnection) ctx.getBean("getConnection");
+        System.out.println(myConnection1);
+
+        //Use @Bean("MyDate")
+        Date bean1 = (Date) ctx.getBean("MyDate");
+        System.out.println(bean1);
 
     }
 
