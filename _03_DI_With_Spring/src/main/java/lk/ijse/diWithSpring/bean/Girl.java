@@ -7,11 +7,12 @@ import org.springframework.context.ApplicationContextAware;
 import org.springframework.stereotype.Component;
 
 @Component
-public class Girl implements BeanNameAware, BeanFactoryAware, ApplicationContextAware, InitializingBean, DisposableBean {
+public class Girl implements GoodGirl,BeanNameAware, BeanFactoryAware, ApplicationContextAware, InitializingBean, DisposableBean {
     public Girl() {
         System.out.println("Girl created "+this);
     }
 
+    @Override
     public void chatting(){
         System.out.println("Chatting");
     }
