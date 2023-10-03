@@ -9,7 +9,7 @@ import org.springframework.stereotype.Component;
 @Component
 public class Girl implements BeanNameAware, BeanFactoryAware, ApplicationContextAware, InitializingBean, DisposableBean {
     public Girl() {
-        System.out.println("Girl created");
+        System.out.println("Girl created "+this);
     }
 
     public void chatting(){
