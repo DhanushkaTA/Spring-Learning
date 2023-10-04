@@ -23,6 +23,7 @@ public class Tharindu implements Di{
         goodGirl.chat();
     }
 
+    //Setter method injection
     @Autowired
     @Override
     public void setGoodGirl(GoodGirl goodGirl) {
