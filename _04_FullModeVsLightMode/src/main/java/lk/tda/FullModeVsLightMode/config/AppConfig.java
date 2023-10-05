@@ -1,5 +1,7 @@
 package lk.tda.FullModeVsLightMode.config;
 
+import lk.tda.FullModeVsLightMode.bean.MyBasicDataSource;
+import lk.tda.FullModeVsLightMode.bean.MyConnection;
 import lk.tda.FullModeVsLightMode.bean.SpringBeanOne;
 import lk.tda.FullModeVsLightMode.bean.SpringBeanTwo;
 import org.springframework.context.annotation.Bean;
@@ -21,16 +23,34 @@ public class AppConfig {
 //        return new SpringBeanOne();
 //    }
 
-    @Bean
-    public SpringBeanOne getSpringBeanOne(SpringBeanTwo springBeanTwo){
-        //Inter Bean Dependency
-        System.out.println("1 : "+springBeanTwo);
+//    @Bean
+//    public SpringBeanOne getSpringBeanOne(SpringBeanTwo springBeanTwo){
+//        //Inter Bean Dependency
+//        System.out.println("1 : "+springBeanTwo);
+//
+//        return new SpringBeanOne();
+//    }
 
-        return new SpringBeanOne();
+    @Bean
+    public MyBasicDataSource getMyBasicDataSource(){
+
+        //MyConnection myConnection = new MyConnection(); Worng
+        //Inter Bean Dependency Invocation
+        MyConnection myConnection = this.getMyConnection();
+        System.out.println("myConnection 1 : "+myConnection);
+
+        MyBasicDataSource myBasicDataSource = new MyBasicDataSource();
+        myBasicDataSource.setMyConnection(myConnection);
+        return myBasicDataSource;
     }
 
     @Bean
-    public SpringBeanTwo getSpringBeanTwo(){
-        return new SpringBeanTwo();
+    public MyConnection getMyConnection(){
+        return new MyConnection();
     }
+
+//    @Bean
+//    public SpringBeanTwo getSpringBeanTwo(){
+//        return new SpringBeanTwo();
+//    }
 }
