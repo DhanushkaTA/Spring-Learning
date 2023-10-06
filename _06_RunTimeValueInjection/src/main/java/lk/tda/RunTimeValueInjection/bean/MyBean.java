@@ -1,4 +1,4 @@
-package lk.tda.springEnviroment.bean;
+package lk.tda.RunTimeValueInjection.bean;
 
 import org.springframework.beans.factory.InitializingBean;
 import org.springframework.beans.factory.annotation.Value;
