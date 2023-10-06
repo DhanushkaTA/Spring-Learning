@@ -40,6 +40,13 @@ public class DBConnection implements InitializingBean {
         String username2 = environment.getProperty("USERNAMEe");
         System.out.println(username2);
 
+        String os = environment.getRequiredProperty("os.name");
+        System.out.println(os);
+
+        //Wrong key -> Exception / BeanCreationException -> Required key 'os.names' not found
+        String os1 = environment.getRequiredProperty("os.names");
+        System.out.println(os1);
+
         System.out.println(url);
         System.out.println(username);
         System.out.println(password);
