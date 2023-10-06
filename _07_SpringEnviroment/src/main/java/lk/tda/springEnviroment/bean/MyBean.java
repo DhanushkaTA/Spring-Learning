@@ -4,6 +4,7 @@ import org.springframework.beans.factory.InitializingBean;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Component;
 
+//06_RunTimeValueInjection
 @Component
 public class MyBean implements InitializingBean {
     @Value("Thairndu")
