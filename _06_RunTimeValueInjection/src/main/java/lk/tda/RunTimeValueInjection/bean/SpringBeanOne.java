@@ -10,7 +10,7 @@ public class SpringBeanOne {
 //        System.out.println("Bean Created");
 //    }
 
-    //Error :- UnsatisfiedDependencyException
+    //Error (I) :- UnsatisfiedDependencyException
     //Error creating bean with name 'springBeanOne' defined in file
     // \[D:\JAVA\GDSE 63\Testing Apps\Spring\_06_RunTimeValueInjection\target\classes\lk\tda\RunTimeValueInjection\bean\SpringBeanOne.class]:
     // Unsatisfied dependency expressed through constructor parameter 0; nested exception is
@@ -24,7 +24,7 @@ public class SpringBeanOne {
     //@Value :- primitive DataType,String,Array
 
 
-    //New Error :- .BeanCreationException
+    //New Error(II) :- .BeanCreationException
     // Error creating bean with name 'springBeanOne' defined in file
     // [D:\JAVA\GDSE 63\Testing Apps\Spring\_06_RunTimeValueInjection\target\classes\lk\tda\RunTimeValueInjection\bean\SpringBeanOne.class]:
     // Instantiation of bean failed; nested exception is org.springframework.beans.BeanInstantiationException:
@@ -35,6 +35,21 @@ public class SpringBeanOne {
     public SpringBeanOne(@Value("Saman") String name,@Value("10000") int salary){
         System.out.println(name);
         System.out.println(salary);
+    }
+
+
+    //New Error(III) :- .BeanCreationException
+    //Error creating bean with name 'springBeanOne': Invalid autowire-marked constructor:
+    // public lk.tda.RunTimeValueInjection.bean.SpringBeanOne(java.lang.String[],int,boolean). Found constructor with
+    // 'required' Autowired annotation already:
+    // public lk.tda.RunTimeValueInjection.bean.SpringBeanOne(java.lang.String,int)
+    @Autowired
+    public SpringBeanOne(@Value("Saman,Kamal,Nimal") String names[],@Value("25") int age,@Value("true") boolean b){
+        for (String name : names){
+            System.out.println(name);
+        }
+        System.out.println(age);
+        System.out.println(b);
     }
 
 
