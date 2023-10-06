@@ -9,10 +9,8 @@ public class AppInitializer {
     public static void main(String[] args) {
         AnnotationConfigApplicationContext ctx=new AnnotationConfigApplicationContext();
         ctx.registerShutdownHook();
-        //Register Configuration class Way I
+        //Register Configuration class Way II
         ctx.register(AppConfig.class);
-        ctx.register(AppConfigTwo.class);
-        ctx.register(AppConfigThree.class);
         ctx.refresh();
     }
 }
