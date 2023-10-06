@@ -39,6 +39,27 @@ public class MyBean implements BeanNameAware, BeanFactoryAware, ApplicationConte
     }
 
 
+    //Light Mode
+    @Bean
+    public MyBasicDataSource getMyBasicDataSource(){
 
+        //MyConnection myConnection = new MyConnection(); Wrong
+        //Inter Bean Dependency Invocation
+        MyConnection myConnection = getMyConnection();
+        MyConnection myConnection2 = getMyConnection();
+        MyConnection myConnection3 = getMyConnection();
+        System.out.println("myConnection 1 : "+myConnection);
+        System.out.println("myConnection 1.2 : "+myConnection2);
+        System.out.println("myConnection 1.3 : "+myConnection3);
+
+        MyBasicDataSource myBasicDataSource = new MyBasicDataSource();
+        myBasicDataSource.setMyConnection(myConnection);
+        return myBasicDataSource;
+    }
+
+    @Bean
+    public MyConnection getMyConnection(){
+        return new MyConnection();
+    }
 
 }

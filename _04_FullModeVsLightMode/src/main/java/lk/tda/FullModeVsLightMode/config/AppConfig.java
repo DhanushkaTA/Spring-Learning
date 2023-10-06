@@ -13,16 +13,16 @@ import org.springframework.context.annotation.Configuration;
 public class AppConfig {
 
     //Full Mode
-    @Bean
-    public SpringBeanOne getSpringBeanOne(){
-        //Inter Bean Dependency
-        SpringBeanTwo springBeanTwo1 = this.getSpringBeanTwo();
-        SpringBeanTwo springBeanTwo2 = this.getSpringBeanTwo();
-        System.out.println("1 : "+springBeanTwo1);
-        System.out.println("2 : "+springBeanTwo2);
-
-        return new SpringBeanOne();
-    }
+//    @Bean
+//    public SpringBeanOne getSpringBeanOne(){
+//        //Inter Bean Dependency
+//        SpringBeanTwo springBeanTwo1 = this.getSpringBeanTwo();
+//        SpringBeanTwo springBeanTwo2 = this.getSpringBeanTwo();
+//        System.out.println("1 : "+springBeanTwo1);
+//        System.out.println("2 : "+springBeanTwo2);
+//
+//        return new SpringBeanOne();
+//    }
 
 //    @Bean
 //    public SpringBeanOne getSpringBeanOne(SpringBeanTwo springBeanTwo){
@@ -32,8 +32,8 @@ public class AppConfig {
 //        return new SpringBeanOne();
 //    }
 
-    @Bean
-    public SpringBeanTwo getSpringBeanTwo(){
-        return new SpringBeanTwo();
-    }
+//    @Bean
+//    public SpringBeanTwo getSpringBeanTwo(){
+//        return new SpringBeanTwo();
+//    }
 }
