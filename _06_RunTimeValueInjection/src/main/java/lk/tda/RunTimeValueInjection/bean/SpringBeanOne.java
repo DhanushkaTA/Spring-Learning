@@ -20,4 +20,20 @@ public class SpringBeanOne {
         System.out.println("Bean Created");
         System.out.println(name);
     }
+    //@Value :- primitive DataType,String,Array
+
+
+    //New Error :- .BeanCreationException
+    // Error creating bean with name 'springBeanOne' defined in file
+    // [D:\JAVA\GDSE 63\Testing Apps\Spring\_06_RunTimeValueInjection\target\classes\lk\tda\RunTimeValueInjection\bean\SpringBeanOne.class]:
+    // Instantiation of bean failed; nested exception is org.springframework.beans.BeanInstantiationException:
+    // Failed to instantiate [lk.tda.RunTimeValueInjection.bean.SpringBeanOne]: No default constructor found;
+    // nested exception is java.lang.NoSuchMethodException: lk.tda.RunTimeValueInjection.bean.SpringBeanOne.<init>()
+
+    public SpringBeanOne(@Value("Saman") String name,@Value("10000") int salary){
+        System.out.println(name);
+        System.out.println(salary);
+    }
+
+
 }
