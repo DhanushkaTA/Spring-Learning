@@ -1,5 +1,6 @@
 package lk.tda.RunTimeValueInjection.bean;
 
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Component;
 
 @Component
@@ -15,7 +16,8 @@ public class SpringBeanOne {
     // org.springframework.beans.factory.NoSuchBeanDefinitionException:
     // No qualifying bean of type 'java.lang.String' available: expected at least 1 bean which qualifies as autowire
     // candidate. Dependency annotations: {}
-    public SpringBeanOne(String name) {
+    public SpringBeanOne(@Value("Saman") String name) {
         System.out.println("Bean Created");
+        System.out.println(name);
     }
 }
