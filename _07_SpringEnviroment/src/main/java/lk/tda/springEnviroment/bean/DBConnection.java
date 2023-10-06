@@ -8,7 +8,6 @@ import org.springframework.stereotype.Component;
 
 @Component
 public class DBConnection implements InitializingBean {
-
     @Autowired
     Environment environment;
 
@@ -23,7 +22,6 @@ public class DBConnection implements InitializingBean {
 
     @Value("${user.db.driverClassName}")
     private String driverClassName;
-
 
     public DBConnection() {
         System.out.println("DBConnection Object Created");
