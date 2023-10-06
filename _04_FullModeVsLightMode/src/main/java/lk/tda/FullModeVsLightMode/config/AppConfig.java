@@ -12,16 +12,17 @@ import org.springframework.context.annotation.Configuration;
 @ComponentScan(basePackages = "lk.tda.FullModeVsLightMode.bean")
 public class AppConfig {
 
-//    @Bean
-//    public SpringBeanOne getSpringBeanOne(){
-//        //Inter Bean Dependency
-//        SpringBeanTwo springBeanTwo1 = this.getSpringBeanTwo();
-//        SpringBeanTwo springBeanTwo2 = this.getSpringBeanTwo();
-//        System.out.println("1 : "+springBeanTwo1);
-//        System.out.println("2 : "+springBeanTwo2);
-//
-//        return new SpringBeanOne();
-//    }
+    //Full Mode
+    @Bean
+    public SpringBeanOne getSpringBeanOne(){
+        //Inter Bean Dependency
+        SpringBeanTwo springBeanTwo1 = this.getSpringBeanTwo();
+        SpringBeanTwo springBeanTwo2 = this.getSpringBeanTwo();
+        System.out.println("1 : "+springBeanTwo1);
+        System.out.println("2 : "+springBeanTwo2);
+
+        return new SpringBeanOne();
+    }
 
 //    @Bean
 //    public SpringBeanOne getSpringBeanOne(SpringBeanTwo springBeanTwo){
@@ -32,25 +33,7 @@ public class AppConfig {
 //    }
 
     @Bean
-    public MyBasicDataSource getMyBasicDataSource(){
-
-        //MyConnection myConnection = new MyConnection(); Worng
-        //Inter Bean Dependency Invocation
-        MyConnection myConnection = this.getMyConnection();
-        System.out.println("myConnection 1 : "+myConnection);
-
-        MyBasicDataSource myBasicDataSource = new MyBasicDataSource();
-        myBasicDataSource.setMyConnection(myConnection);
-        return myBasicDataSource;
+    public SpringBeanTwo getSpringBeanTwo(){
+        return new SpringBeanTwo();
     }
-
-    @Bean
-    public MyConnection getMyConnection(){
-        return new MyConnection();
-    }
-
-//    @Bean
-//    public SpringBeanTwo getSpringBeanTwo(){
-//        return new SpringBeanTwo();
-//    }
 }
