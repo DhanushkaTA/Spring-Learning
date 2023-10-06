@@ -54,5 +54,16 @@ public class SpringBeanOne {
     }
     //When add @Autowired(required = false) the run constructor with higher number of parameter
 
+    @Autowired(required = false)
+    public SpringBeanOne(@Value("Saman,Kamal,Nimal") String names[],@Value("25,30,40,50") int ages[],@Value("true") boolean b){
+        for (String name : names){
+            System.out.println(name);
+        }
+        for (int age : ages){
+            System.out.println(age);
+        }
+        System.out.println(b);
+    }
+
 
 }
