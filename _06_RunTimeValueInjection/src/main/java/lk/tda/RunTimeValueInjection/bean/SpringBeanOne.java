@@ -31,7 +31,7 @@ public class SpringBeanOne {
     // Failed to instantiate [lk.tda.RunTimeValueInjection.bean.SpringBeanOne]: No default constructor found;
     // nested exception is java.lang.NoSuchMethodException: lk.tda.RunTimeValueInjection.bean.SpringBeanOne.<init>()
 
-    @Autowired
+    @Autowired(required = false)
     public SpringBeanOne(@Value("Saman") String name,@Value("10000") int salary){
         System.out.println(name);
         System.out.println(salary);
@@ -43,7 +43,8 @@ public class SpringBeanOne {
     // public lk.tda.RunTimeValueInjection.bean.SpringBeanOne(java.lang.String[],int,boolean). Found constructor with
     // 'required' Autowired annotation already:
     // public lk.tda.RunTimeValueInjection.bean.SpringBeanOne(java.lang.String,int)
-    @Autowired
+
+    @Autowired(required = false)
     public SpringBeanOne(@Value("Saman,Kamal,Nimal") String names[],@Value("25") int age,@Value("true") boolean b){
         for (String name : names){
             System.out.println(name);
@@ -51,6 +52,7 @@ public class SpringBeanOne {
         System.out.println(age);
         System.out.println(b);
     }
+    //When add @Autowired(required = false) the run constructor with higher number of parameter
 
 
 }
