@@ -14,7 +14,7 @@ public class AppInitializer {
         ctx.refresh();
 
         System.out.println("+++++++++++++++++++++++++++");
-
+/**
         //Get System Environment Variables
         Map<String, String> getenv = System.getenv();
         for (String key :
@@ -30,5 +30,6 @@ public class AppInitializer {
                 properties.keySet()) {
             System.out.println(key+" : "+properties.get(key));
         }
+ */
     }
 }
