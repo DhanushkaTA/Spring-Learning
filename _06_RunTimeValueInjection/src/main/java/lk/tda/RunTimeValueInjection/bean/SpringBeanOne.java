@@ -1,5 +1,6 @@
 package lk.tda.RunTimeValueInjection.bean;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Component;
 
@@ -30,6 +31,7 @@ public class SpringBeanOne {
     // Failed to instantiate [lk.tda.RunTimeValueInjection.bean.SpringBeanOne]: No default constructor found;
     // nested exception is java.lang.NoSuchMethodException: lk.tda.RunTimeValueInjection.bean.SpringBeanOne.<init>()
 
+    @Autowired
     public SpringBeanOne(@Value("Saman") String name,@Value("10000") int salary){
         System.out.println(name);
         System.out.println(salary);
