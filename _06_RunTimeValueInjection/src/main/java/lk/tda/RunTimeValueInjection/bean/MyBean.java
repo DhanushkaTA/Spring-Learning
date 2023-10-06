@@ -20,7 +20,7 @@ public class MyBean implements InitializingBean {
     String skille[];
 
     public MyBean() {
-        System.out.println("MyBean Created");
+        System.out.println("MyBean Object Created");
     }
 
     @Override

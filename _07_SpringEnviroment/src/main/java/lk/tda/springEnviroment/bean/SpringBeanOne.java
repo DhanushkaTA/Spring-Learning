@@ -7,6 +7,6 @@ import org.springframework.stereotype.Component;
 @Component
 public class SpringBeanOne {
     public SpringBeanOne() {
-        System.out.println("Bean Created");
+        System.out.println("SpringBean Object Created");
     }
 }
