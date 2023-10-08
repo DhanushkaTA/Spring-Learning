@@ -8,18 +8,20 @@ import org.springframework.web.bind.annotation.RestController;
 @RequestMapping("character")
 public class CharacterMappingController {
 
-    @GetMapping(path = "test1")//Handler Mapping
+    @GetMapping(path = "I???")//Handler Mapping
     public String test(){ // Handler/Mapping Method
         return "Test Method invoked";
-    }//...exact/test1
+    }//...character/I123 .../character/Iabc
 
-    @GetMapping(path = "test1/io/tt2")//Handler Mapping
-    public String test02(){ // Handler/Mapping Method
-        return "Test 02 Method invoked";
-    }//...exact/test1/io/tt2
+    @GetMapping(path = "????/search")//Handler Mapping
+    public String test2(){ // Handler/Mapping Method
+        return "Test 2 Method invoked";
+    }//...character/12sd/search
 
-    @GetMapping(path = "get/test3")//Handler Mapping
-    public String test03(){ // Handler/Mapping Method
-        return "Test 03 Method invoked";
-    }//...exact/get/test3
+    @GetMapping(path = "???")//Handler Mapping
+    public String test3(){ // Handler/Mapping Method
+        return "Test 3 Method invoked";
+    }//...character/5555
+
+
 }
