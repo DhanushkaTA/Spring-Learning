@@ -10,12 +10,20 @@ public class Controller {
     public String getMethod(){ // Handler/Mapping Method
         return "Get Method invoked";
     }
+    //...controller
 
-    @GetMapping//Handler Mapping
-    public String getMethodTwo(){ // Handler/Mapping Method
-        return "Get Method invoked";
+//    @GetMapping//Handler Mapping
+//    public String getMethodTwo(){ // Handler/Mapping Method
+//        return "Get Method invoked";
+//    }
+//    //Error :- Ambiguous Mapping
+
+    @GetMapping(path = "search")//Handler Mapping
+    public String getSearchMethod(){ // Handler/Mapping Method
+        return "Get Search Method invoked";
     }
-    //Error :- Ambiguous Mapping
+    //.../controller/search
+
 
     @PutMapping//Handler Mapping
     public String putMethod(){ // Handler/Mapping Method
