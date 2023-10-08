@@ -15,7 +15,8 @@ import org.springframework.web.servlet.view.InternalResourceViewResolver;
 @EnableWebMvc
 public class WebAppConfig implements WebMvcConfigurer {
 
-    //if controller class return nothing exception
+    //if controller class return nothing exception (500)
+    //if controller class return datatype not a view(html) then return  (404) error
     //When Controller class return 'index' ->       1) .../views/index        2) .../views/index.html
     //When Controller class return 'controller' ->  1) .../views/controller   2) .../views/index.html
     @Bean
