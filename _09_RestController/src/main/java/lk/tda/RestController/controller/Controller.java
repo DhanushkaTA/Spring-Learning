@@ -11,6 +11,12 @@ public class Controller {
         return "Get Method invoked";
     }
 
+    @GetMapping//Handler Mapping
+    public String getMethodTwo(){ // Handler/Mapping Method
+        return "Get Method invoked";
+    }
+    //Error :- Ambiguous Mapping
+
     @PutMapping//Handler Mapping
     public String putMethod(){ // Handler/Mapping Method
         return "Put Method invoked";
